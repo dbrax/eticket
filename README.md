@@ -18,7 +18,8 @@ composer require epmnzava/eticket
 ## Usage
 
 ``` php
-// Usage description here
+// coming soon after few developments
+
 ```
 
 ### Testing
