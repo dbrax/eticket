@@ -10,8 +10,8 @@ git pull
 git add .
 
 
-read -p "\e[1;42m Enter commit message: " message
-echo -e "\e[1;31m  Your commit message is  $message !"
+read -p " Enter commit message: " message
+echo  " Your commit message is  $message !"
 
 git commit -m " $message "
 
