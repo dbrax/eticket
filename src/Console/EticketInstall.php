@@ -64,6 +64,11 @@ class EticketInstall extends Command
     {
     }
 
+
+    private function feedCurrencies(){
+        
+    }
+
     private function installTicketStatuses()
     {
     }

@@ -29,6 +29,9 @@ class CreateOrganizerTable extends Migration
             $table->string("timezone")->nullable();
             $table->string("logo")->nullable();
             $table->string("url")->nullable();
+            $table->string("currency")->nullable();
+            $table->text("description")->nullable();
+
 
             $table->timestamps();
         });
