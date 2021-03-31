@@ -12,8 +12,8 @@ namespace Epmnzava\BillMe\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class Timezone extends Model
 {
     protected $guarded = [];
-    protected $table="events";
+    protected $table="timezones";
 }

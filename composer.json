@@ -51,7 +51,7 @@
                 "Epmnzava\\Eticket\\EticketServiceProvider"
             ],
             "aliases": {
-                "Eticket": "Epmnzava\\Eticket\\EticketFacade"
+                "Eticket": "Epmnzava\\Eticket\\Facades\\Eticket"
             }
         }
     }
