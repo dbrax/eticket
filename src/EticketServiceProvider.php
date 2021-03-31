@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * Author: Emmanuel Paul Mnzava
+ * Twitter: @epmnzava
+ * Github:https://github.com/dbrax/eticket
+ * Email: epmnzava@gmail.com
+ * 
+ */
+
+ 
 namespace Epmnzava\Eticket;
 
 use Illuminate\Support\ServiceProvider;
@@ -18,6 +27,12 @@ class EticketServiceProvider extends ServiceProvider
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'eticket');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         // $this->loadRoutesFrom(__DIR__.'/routes.php');
+
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                FeedInTimezone::class,
+            ]);
+        }
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
