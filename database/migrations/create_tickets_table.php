@@ -31,9 +31,15 @@ class CreateTicketsTable extends Migration
             ->constrained()
             ->onUpdate('cascade')
             ->onDelete('cascade');
-
-
-
+            $table->string('name');
+            $table->integer('amount');
+            $table->integer('quantity');
+            $table->text('description')->nullable();
+            $table->text('status')->nullable();
+            $table->integer('minimum_order')->default(1);
+            $table->integer('maximum_order')->default(1);
+            $table->integer('hide_on_sold_out')->default(1);
+            $table->integer('show_quantity_remaining')->default(1);
             $table->timestamps();
         });
     }
