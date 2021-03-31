@@ -17,17 +17,7 @@ class TicketStatusInitialize extends Command
 
 
         
-        if (! $this->configExists('blogpackage.php')) {
-            $this->publishConfiguration();
-            $this->info('Published configuration');
-        } else {
-            if ($this->shouldOverwriteConfig()) {
-                $this->info('Overwriting configuration file...');
-                $this->publishConfiguration($force = true);
-            } else {
-                $this->info('Existing configuration was not overwritten');
-            }
-        }
+  
         
         $this->info('End setting ticket status');
     }

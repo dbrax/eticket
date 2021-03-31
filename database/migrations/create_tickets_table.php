@@ -25,12 +25,13 @@ class CreateTicketsTable extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-              //if the user has loggin you can save the user id
-            $table->integer('eventid')->nullable();
+            $table->unsignedBigInteger('eventid')->nullable();
+            $table->foreign('eventid')->references('id')->on('events');
+
             $table->foreignId('eventid')
-            ->constrained()
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->string('name');
             $table->integer('amount');
             $table->integer('quantity');

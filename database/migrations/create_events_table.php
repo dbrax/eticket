@@ -25,12 +25,23 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('userid')->nullable(); //??? in multitenant or distribution
+
+            // add event category ...
+
+            $table->unsignedBigInteger('categoryid')->nullable();
+            $table->foreign('categoryid')->references('id')->on('event_categories');
+
+            $table->foreignId('categoryid')
+                ->constrained()
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
             $table->string('name');
-            $table->string('location',225); 
-            $table->integer('category'); 
-            $table->string('city',255); 
-            $table->string('country',255); 
-            $table->text('description'); 
+            $table->string('location', 225);
+            $table->integer('category');
+            $table->string('city', 255);
+            $table->string('country', 255);
+            $table->text('description');
             $table->string('timezone')->default('(GMT+3:00) Nairobi');
 
             $table->timestamps();
