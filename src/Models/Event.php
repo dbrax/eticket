@@ -11,9 +11,20 @@
 namespace Epmnzava\BillMe\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Epmnzava\BillMe\Models\Ticket;
 
 class Event extends Model
 {
     protected $guarded = [];
     protected $table="events";
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
+
+    public function eventDateTime()
+    {
+        return $this->hasMany(EventDateTime::class);
+    }
 }

@@ -11,9 +11,15 @@
 namespace Epmnzava\BillMe\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Epmnzava\BillMe\Models\Event;
 
 class Ticket extends Model
 {
     protected $guarded = [];
     protected $table="tickets";
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class,'eventid');
+    }
 }

@@ -16,4 +16,8 @@ class EventDateTime extends Model
 {
     protected $guarded = [];
     protected $table="event_categories";
+    public function event()
+    {
+        return $this->belongsTo(Event::class,'eventid');
+    }
 }

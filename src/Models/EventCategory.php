@@ -11,9 +11,16 @@
 namespace Epmnzava\BillMe\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Epmnzava\BillMe\Models\Event;
 
 class EventCategory extends Model
 {
     protected $guarded = [];
     protected $table="event_categories";
+
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
 }
